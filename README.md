@@ -43,15 +43,15 @@ Example output:
 PS3_SYSTEM_VER = 01.9300
 APP_VER = 01.00
 PARENTAL_LEVEL = 
-LICENSE = Library programs ©Sony Computer Entertainment Inc. Licensed for play on the PLAYSTATION®3 Computer Entertainment System or authorized PLAYSTATION®3 format systems. For full terms and conditions see the user's manual. This product is authorized and produced under license from Sony Computer Entertainment Inc. Use is subject to the copyright laws and the terms and conditions of the user's license.
+LICENSE = Library programs Â©Sony Computer Entertainment Inc. Licensed for play on the PLAYSTATIONÂ®3 Computer Entertainment System or authorized PLAYSTATIONÂ®3 format systems. For full terms and conditions see the user's manual. This product is authorized and produced under license from Sony Computer Entertainment Inc. Use is subject to the copyright laws and the terms and conditions of the user's license.
 RESOLUTION = ?
 TITLE_ID = BCES00052
 CATEGORY = DG
 BOOTABLE = 
 VERSION = 01.00
 SOUND_FORMAT = 
-TITLE_05 = Ratchet & Clank: Armi di distruzione™
-TITLE_03 = Ratchet & Clank: Armados hasta los dientes™
-TITLE = Ratchet & Clank: Tools of Destruction™
-TITLE_02 = Ratchet & Clank: Opération Destruction™
+TITLE_05 = Ratchet & Clank: Armi di distruzioneâ„¢
+TITLE_03 = Ratchet & Clank: Armados hasta los dientesâ„¢
+TITLE = Ratchet & Clank: Tools of Destructionâ„¢
+TITLE_02 = Ratchet & Clank: OpÃ©ration Destructionâ„¢
 ```
