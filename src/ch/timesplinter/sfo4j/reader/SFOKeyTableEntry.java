@@ -1,7 +1,7 @@
 package ch.timesplinter.sfo4j.reader;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class SFOKeyTableEntry {
 	public final static byte DELIMITER_BYTE = 0;
@@ -18,7 +18,7 @@ public class SFOKeyTableEntry {
 	 * @return String
 	 * @throws IOException
 	 */
-	public String readEntry(FileInputStream fIn) throws IOException {
+	public String readEntry(InputStream fIn) throws IOException {
 		byte[] tempByteArray1 = new byte[1];
 		StringBuilder sb = new StringBuilder();
 		
