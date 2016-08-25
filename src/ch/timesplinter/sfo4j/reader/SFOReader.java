@@ -3,6 +3,7 @@ package ch.timesplinter.sfo4j.reader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +29,6 @@ import ch.timesplinter.sfo4j.common.SFOUtilities;
 public class SFOReader {
 	public static final int HEADER_SIZE = 20;
 
-	private String sfoFile;
 	private SFOHeader sfoHeader;
 	private List<SFOIndexTableEntry> indexTableEntryList = new ArrayList<SFOIndexTableEntry>();
 	private List<String> keyTableEntryList = new ArrayList<String>();
@@ -36,21 +36,23 @@ public class SFOReader {
 	private Map<String,SFODataValue> keyValueMap = new TreeMap<String,SFODataValue>();
 	
 	public SFOReader(String sfoFile) throws IOException {
-		this.sfoFile = sfoFile;
-		parse();
+		File inFile = new File(sfoFile);
+		FileInputStream fIn;
+
+		fIn = new FileInputStream(inFile);
+		parse(fIn);
+	}
+
+	public SFOReader(InputStream fIn) throws IOException {
+		parse(fIn);
 	}
 	
 	/**
-	 * parse the submitted file (sfoFile) with the constructor and
+	 * parse the submitted inputStream and
 	 * fills the different ArrayLists and HashMaps
 	 * @throws IOException 
 	 */
-	private void parse() throws IOException {
-		File inFile = new File(sfoFile);
-		FileInputStream fIn;
-		
-		fIn = new FileInputStream(inFile);
-		
+	private void parse(InputStream fIn) throws IOException {
 		// sfoHeader lesen
 					sfoHeader = SFOHeader.read(fIn);
 		
@@ -60,7 +62,7 @@ public class SFOReader {
 		}
 		
 		// Zum KeyTable Anfang springen 
-		// (offset der KeyTabelle - Header-Länge - Anzahl * IndexEntry Länge = restl. zu ignorierende Bytes)
+		// (offset der KeyTabelle - Header-LÃ¤nge - Anzahl * IndexEntry LÃ¤nge = restl. zu ignorierende Bytes)
 		int skipBytesToKeyTable = sfoHeader.getOffsetKeyTable()-HEADER_SIZE-(sfoHeader.getNumberDataItems()*SFOIndexTableEntry.INDEX_TABLE_ENTRY_LENGTH);
 		fIn.skip(skipBytesToKeyTable);
 		

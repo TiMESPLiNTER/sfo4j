@@ -1,7 +1,7 @@
 package ch.timesplinter.sfo4j.reader;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import ch.timesplinter.sfo4j.common.SFOUtilities;
 
@@ -13,7 +13,7 @@ public class SFOHeader {
 	private int offsetValueTable;
 	private int numberDataItems;
 	
-	public static SFOHeader read(FileInputStream fIn) throws IOException {
+	public static SFOHeader read(InputStream fIn) throws IOException {
 		SFOHeader sfoHeader = new SFOHeader();
 		
 		byte[] tempByteArray = new byte[4];

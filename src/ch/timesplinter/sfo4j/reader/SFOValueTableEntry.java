@@ -1,7 +1,7 @@
 package ch.timesplinter.sfo4j.reader;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 
 public class SFOValueTableEntry {
@@ -19,7 +19,7 @@ public class SFOValueTableEntry {
 	 * @return String
 	 * @throws IOException
 	 */
-	public byte[] readEntry(FileInputStream fIn, SFOIndexTableEntry sfoIndexTableEntry) throws IOException {
+	public byte[] readEntry(InputStream fIn, SFOIndexTableEntry sfoIndexTableEntry) throws IOException {
 		byte[] entryByteArray = new byte[sfoIndexTableEntry.getSizeValueData()];
 		
 		fIn.read(entryByteArray,0,sfoIndexTableEntry.getSizeValueData());
